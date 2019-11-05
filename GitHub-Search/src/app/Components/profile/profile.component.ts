@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RepositoryService } from "../../services/repository.service";
 
 @Component({
   selector: 'ghs-profile',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor() { }
+  constructor(private repositoryService: RepositoryService) {
+    this.repositoryService.getProfileInfo().subscribe(repository => {
+      console.log(repository);
+    });
+  }
 
   ngOnInit() {
   }
