@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
-// import 'rxjs/add/operator/map';
 
 @Injectable({
   providedIn: 'root'
@@ -14,9 +13,9 @@ export class RepositoryService {
   constructor(private http: HttpClient) {
     console.log("repository is now ready!");
     this.username = 'BradOdera';
-   }
+  }
 
-   getProfileInfo(){
-     return this.http.get("https://api.github.com/users/" +this.username + "?client_id=" + this.clientid +"&client_secret" + this.clientsecret);
-   }
+  getProfileInfo() {
+    return this.http.get("https://api.github.com/users/" + this.username + "?client_id=" + this.clientid + "&client_secret" + this.clientsecret);
+  }
 }

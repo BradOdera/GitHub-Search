@@ -7,10 +7,12 @@ import { RepositoryService } from "../../services/repository.service";
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
+  private profile: any[];
 
   constructor(private repositoryService: RepositoryService) {
     this.repositoryService.getProfileInfo().subscribe(repository => {
       console.log(repository);
+      this.profile = repository;
     });
   }
 
