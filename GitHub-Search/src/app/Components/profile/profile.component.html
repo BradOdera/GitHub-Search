@@ -1,16 +1,11 @@
-<!-- <form action="search-form" #searchForm='ngForm' (ngSubmit)="findProfile(searchForm)">
-    <div class="form-group" class="form-control" placeholder="Search git users with username" name="username" ngModel></div>
-</form> -->
-
-<form class="example-form" #searchForm='ngForm' (ngSubmit)='findProfile(searchForm)'>
-    <mat-form-field class="example-full-width" width="100%">
-        <input matInput type="text" placeholder="Github UserName" name='username' [(ngModel)]="RepositoryService.username">
-    </mat-form-field>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <button mat-raised-button color="primary" type="submit">Search User</button>
-</form>
-
-<!-- <div *ngIf="RepositoryService">
+<div *ngIf="RepositoryService">
+    <form class="example-form" #searchForm='ngForm' (ngSubmit)='findProfile(searchForm)'>
+        <mat-form-field class="example-full-width" width="100%">
+            <input matInput type="text" placeholder="Github UserName" name='username' [(ngModel)]="RepositoryService.username">
+        </mat-form-field>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button mat-raised-button color="primary" type="submit">Search User</button>
+    </form>
     <div class="panel panel-default"></div>
     <div class="panel-heading">
         {{RepositoryService.name}}<small>{{RepositoryService.login}}</small>
@@ -54,4 +49,4 @@
             </div>
         </div>
     </div>
-</div> -->
+</div>
