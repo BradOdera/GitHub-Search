@@ -119,6 +119,14 @@
               "devServerTarget": "GitHub-Search:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@netlify-builder/deploy:deploy",
+          "options": {
+            "outputPath": "dist/GitHub-Search",
+            "netlifyToken": "bf1c9888a5b84bcf4114b550710c82287b7e127ac53d6ebe394488c11e937161",
+            "siteId": "14351dfa-8b3a-4e32-804d-ed1a78e7b4ee"
+          }
         }
       }
     }

@@ -30,36 +30,36 @@ export class ProfileComponent implements OnInit {
   findProfile(param) {
     console.log(param.value);
     this.username = param.value;
-    this.repositoryService.updateProfile(this.username).subscribe(data=>{
-    this.pro = data;  
-    console.log(this.pro);
-
-    this.RepositoryService = new Object(this.pro);
-    console.log(this.RepositoryService);
-
-    let repoUrl = this.RepositoryService['repos_url']
-    this.repositoryService.getProfileRepos(repoUrl).subscribe(_repos => {
-      console.log(_repos);
-      this.repos = _repos;
-    })
-
-  });
-
-  }
-  ngOnInit() {
-    this.repositoryService.getProfileInfo().subscribe(data=>{
-      this.pro = data;  
+    this.repositoryService.updateProfile(this.username).subscribe(data => {
+      this.pro = data;
       console.log(this.pro);
-  
+
       this.RepositoryService = new Object(this.pro);
       console.log(this.RepositoryService);
-  
+
       let repoUrl = this.RepositoryService['repos_url']
       this.repositoryService.getProfileRepos(repoUrl).subscribe(_repos => {
         console.log(_repos);
         this.repos = _repos;
       })
-  
+
+    });
+
+  }
+  ngOnInit() {
+    this.repositoryService.getProfileInfo().subscribe(data => {
+      this.pro = data;
+      console.log(this.pro);
+
+      this.RepositoryService = new Object(this.pro);
+      console.log(this.RepositoryService);
+
+      let repoUrl = this.RepositoryService['repos_url']
+      this.repositoryService.getProfileRepos(repoUrl).subscribe(_repos => {
+        console.log(_repos);
+        this.repos = _repos;
+      })
+
     });
   }
 

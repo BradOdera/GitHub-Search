@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from "@angular/common/http";
 
 import { FormsModule } from "@angular/forms";
-import {MatFormFieldModule, MatInputModule } from '@angular/material';
+import { MatFormFieldModule, MatInputModule } from '@angular/material';
 
 import { RepositoryService } from "./services/repository.service";
 
@@ -16,7 +16,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   declarations: [
     AppComponent,
     ProfileComponent
-    
+
   ],
   imports: [
     BrowserModule,
