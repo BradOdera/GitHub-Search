@@ -1,3 +1,7 @@
+<form action="search-form">
+    <div class="form-group" class="form-control" placeholder="Search git users with username" [(ngModel)]="username" name="username" (keyup)="findProfile()"></div>
+</form>
+
 <div *ngIf="RepositoryService">
     <div class="panel panel-default"></div>
     <div class="panel-heading">
@@ -18,8 +22,27 @@
             </div>
             <div class="col-sm-4">
                 <p>
-                    <span class="label label-deafult">{{RepositoryService.followers}}Followers</span>
+                    <span class="badge badge-default">{{RepositoryService.followers}}Followers</span>
+                    <span class="badge badge-primary">{{RepositoryService.following}}Following</span>
+                    <span class="badge badge-success">{{RepositoryService.public_gists}}Public gists</span>
+                    <span class="badge badge-info">{{RepositoryService.publi_repos}}Public Repos</span>
                 </p>
+                <p>
+                    <a href="{{RepositoryService.html_url}}" target="_blank" class="btn btn-success btn-sm">View GitHub Profile</a>
+                </p>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Repos</h3>
+                    </div>
+                    <div class="panel-body" *ngFor="let repo of repos">
+                        <p>
+                            {{repo.name}} <a href="{{repo.html_url}}" target="_blank" class="btn btn-sm btn-warning">View this project on github</a>
+                        </p>
+                        <p>
+                            {{repo.description}}
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from "@angular/common/http";
 
+import { FormsModule } from "@angular/forms";
+
 import { RepositoryService } from "./services/repository.service";
 
 import { AppRoutingModule } from './app-routing.module';
@@ -12,11 +14,13 @@ import { ProfileComponent } from './Components/profile/profile.component';
   declarations: [
     AppComponent,
     ProfileComponent
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [RepositoryService],
   bootstrap: [AppComponent]

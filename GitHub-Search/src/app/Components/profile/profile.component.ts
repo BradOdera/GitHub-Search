@@ -8,15 +8,27 @@ import { RepositoryService } from "../../services/repository.service";
 })
 export class ProfileComponent implements OnInit {
   profile: any[];
-  RepositoryService: typeof ProfileComponent;
+  repos: any[];
+  // RepositoryService: typeof ProfileComponent;
+  username: string;
+  RepositoryService: Object;
 
   constructor(private repositoryService: RepositoryService) {
-    this.repositoryService.getProfileInfo().subscribe(repository => {
-      console.log(repository);
+    this.repositoryService.getProfileInfo().subscribe(ProfileComponent => {
+      console.log(RepositoryService);
       this.RepositoryService = ProfileComponent;
     });
+
+    this.repositoryService.getProfileRepos().subscribe(_repos => {
+      console.log(this.repos);
+      this.repos = this.repos;
+    })
   }
 
+  findProfile() {
+
+    this.repositoryService.updateProfile(this.username);
+  }
   ngOnInit() {
   }
 
