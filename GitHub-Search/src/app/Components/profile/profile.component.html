@@ -25,8 +25,8 @@
             </div>
             <div class="col-sm-4">
                 <p>
-                    <span class="badge badge-default">{{RepositoryService.followers}}Followers</span>
-                    <span class="badge badge-primary">{{RepositoryService.following}}Following</span>
+                    <span class="badge badge-secondary">{{RepositoryService.followers}}&nbsp;Followers</span> &nbsp;
+                    <span class="badge badge-primary">{{RepositoryService.following}}&nbsp;Following</span>
                     <!-- <span class="badge badge-success">{{RepositoryService.public_gists}}Public gists</span> -->
                     <!-- <span class="badge badge-info">{{RepositoryService.publi_repos}}Public Repos</span> -->
                 </p>
@@ -39,10 +39,10 @@
                     </div>
                     <div class="panel-body" *ngFor="let repo of repos">
                         <p>
-                            {{repo.name}} <a href="{{repo.html_url}}" target="_blank" class="btn btn-sm btn-warning">View this project on github</a>
+                            {{repo.name}} <a href="{{repo.html_url}}" target="_blank" class="btn btn-sm btn-warning">View project on Github</a>
                         </p>
                         <p>
-                            {{repo.description}}
+                            <!-- {{repo.description}} -->
                         </p>
                     </div>
                 </div>
