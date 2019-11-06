@@ -22,6 +22,7 @@ export class RepositoryService {
 
 
   getProfileInfo() {
+    console.log(this.username);
     return this.http.get("https://api.github.com/users/" + this.username + "?client_id=" + this.clientid + "&client_secret" + this.clientsecret);
 
   }

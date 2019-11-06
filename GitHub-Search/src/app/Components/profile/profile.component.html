@@ -8,8 +8,8 @@
     </form>
     <div class="panel panel-default"></div>
     <div class="panel-heading">
-        {{RepositoryService.name}}<small>{{RepositoryService.login}}</small>
-        <span *ngIf=RepositoryService.company>,Works at{{RepositoryService.company}}</span> {{RepositoryService.location}}
+        {{RepositoryService.name}}<small>({{RepositoryService.login}})</small>
+        <p *ngIf=RepositoryService.company>Works at&nbsp;{{RepositoryService.company}}</p> {{RepositoryService.location}}
     </div>
     <div class="panel-body">
         <div class="row">
@@ -18,8 +18,8 @@
             </div>
             <div class="col-sm-5">
                 <ul class="list-group">
-                    <li class="list-group-item" *ngIf="RepositoryService.bio">{{RepositoryService.bio}}</li>
-                    <li class="list-group-item" *ngIf="RepositoryService.hireable">Available for hire</li>
+                    <!-- <li class="list-group-item" *ngIf="RepositoryService.bio">{{RepositoryService.bio}}</li> -->
+                    <!-- <li class="list-group-item" *ngIf="RepositoryService.hireable">Available for hire</li> -->
                     <li class="list-group-item" *ngIf="RepositoryService.email"><a href="emailto:{{RepositoryService.email}}">{{RepositoryService.email}}</a></li>
                 </ul>
             </div>
@@ -27,8 +27,8 @@
                 <p>
                     <span class="badge badge-default">{{RepositoryService.followers}}Followers</span>
                     <span class="badge badge-primary">{{RepositoryService.following}}Following</span>
-                    <span class="badge badge-success">{{RepositoryService.public_gists}}Public gists</span>
-                    <span class="badge badge-info">{{RepositoryService.publi_repos}}Public Repos</span>
+                    <!-- <span class="badge badge-success">{{RepositoryService.public_gists}}Public gists</span> -->
+                    <!-- <span class="badge badge-info">{{RepositoryService.publi_repos}}Public Repos</span> -->
                 </p>
                 <p>
                     <a href="{{RepositoryService.html_url}}" target="_blank" class="btn btn-success btn-sm">View GitHub Profile</a>
