@@ -25,8 +25,8 @@ export class ProfileComponent implements OnInit {
     })
   }
 
-  findProfile() {
-
+  findProfile(param) {
+    console.log(param.value);
     this.repositoryService.updateProfile(this.username);
   }
   ngOnInit() {

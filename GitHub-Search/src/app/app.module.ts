@@ -3,12 +3,14 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from "@angular/common/http";
 
 import { FormsModule } from "@angular/forms";
+import {MatFormFieldModule, MatInputModule } from '@angular/material';
 
 import { RepositoryService } from "./services/repository.service";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProfileComponent } from './Components/profile/profile.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,10 @@ import { ProfileComponent } from './Components/profile/profile.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    MatFormFieldModule,
+    BrowserAnimationsModule,
+    MatInputModule
   ],
   providers: [RepositoryService],
   bootstrap: [AppComponent]
