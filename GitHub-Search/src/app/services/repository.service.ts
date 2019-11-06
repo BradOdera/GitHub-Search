@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { HttpClient } from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root'
@@ -16,6 +16,6 @@ export class RepositoryService {
   }
 
   getProfileInfo() {
-    return this.http.get("https://api.github.com/users/BradOdera" + this.username + "?client_id=" + this.clientid + "&client_secret" + this.clientsecret);
+    return this.http.get("https://api.github.com/users/" + this.username + "?client_id=" + this.clientid + "&client_secret" + this.clientsecret);
   }
 }

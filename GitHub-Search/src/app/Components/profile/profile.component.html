@@ -1,6 +1,26 @@
-<div *ngIf="profile">
+<div *ngIf="RepositoryService">
     <div class="panel panel-default"></div>
     <div class="panel-heading">
-        {{}}
+        {{RepositoryService.name}}<small>{{RepositoryService.login}}</small>
+        <span *ngIf=RepositoryService.company>,Works at{{RepositoryService.company}}</span> {{RepositoryService.location}}
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-sm-3">
+                <img src="{{RepositoryService.avatar_url}}" class="img-circle img-responsive" alt="Profile Image">
+            </div>
+            <div class="col-sm-5">
+                <ul class="list-group">
+                    <li class="list-group-item" *ngIf="RepositoryService.bio">{{RepositoryService.bio}}</li>
+                    <li class="list-group-item" *ngIf="RepositoryService.hireable">Available for hire</li>
+                    <li class="list-group-item" *ngIf="RepositoryService.email"><a href="emailto:{{RepositoryService.email}}">{{RepositoryService.email}}</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-4">
+                <p>
+                    <span class="label label-deafult">{{RepositoryService.followers}}Followers</span>
+                </p>
+            </div>
+        </div>
     </div>
 </div>
