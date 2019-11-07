@@ -11,7 +11,7 @@ export class ProfileComponent implements OnInit {
   repos: any;
   // RepositoryService: typeof ProfileComponent;
   username: string;
-  RepositoryService: Object;
+  RepositoryService: any;
 
   constructor(private repositoryService: RepositoryService) {
     this.repositoryService.getProfileInfo().subscribe(ProfileComponent => {
@@ -51,7 +51,7 @@ export class ProfileComponent implements OnInit {
       this.pro = data;
       console.log(this.pro);
 
-      this.RepositoryService = new Object(this.pro);
+      this.RepositoryService = new Object(this.RepositoryService);
       console.log(this.RepositoryService);
 
       let repoUrl = this.RepositoryService['repos_url']
